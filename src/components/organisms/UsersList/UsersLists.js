@@ -7,8 +7,8 @@ const UsersList = () => (
   <Wrapper>
     <ul>
       {/* { name, average, attendance } destrukturyzacja */}
-      {users.map((usersData) => (
-        <UsersListItem usersData={usersData} />
+      {users.map((usersData, i) => (
+        <UsersListItem index={i} usersData={usersData} />
         // <UsersListItem usersData /> tylko gdy propsy sa true lub false
         // np.   isHighlighted
       ))}

@@ -4,9 +4,11 @@ import { Wrapper } from './UsersListItem.styled';
 import Button from 'components/atoms/Button/Button';
 import Average from 'components/atoms/Average/Average';
 
+const showIndex = (index) => alert(`This is student #${index + 1}`);
+
 //dowolna nazwa nie tylko props np. kiełbasa
 //lub destruktu.   userData,   lub od razu average, name, attendance
-const UsersListItem = ({ usersData: { name, average, attendance = '0%' } }) => (
+const UsersListItem = ({ index, usersData: { name, average, attendance = '0%' } }) => (
   <>
     <Wrapper>
       <Average average={average} />
@@ -14,7 +16,7 @@ const UsersListItem = ({ usersData: { name, average, attendance = '0%' } }) => (
         <p>{name}</p>
         <p>attendance: {attendance}</p>
       </div>
-      <Button />
+      <Button onClick={() => showIndex(index)} />
     </Wrapper>
   </>
 );
