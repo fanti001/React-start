@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Wrapper } from './UsersListItem.styled';
+import Button from 'components/atoms/Button/Button';
+import Average from 'components/atoms/Average/Average';
 
 //dowolna nazwa nie tylko props np. kiełbasa
 //lub destruktu.   userData,   lub od razu average, name, attendance
 const UsersListItem = ({ usersData: { name, average, attendance = '0%' } }) => (
   <>
-    <li key={name}>
-      <div>{average}</div>
+    <Wrapper>
+      <Average average={average} />
       <div>
         <p>{name}</p>
-        <p>{attendance}</p>
+        <p>attendance: {attendance}</p>
       </div>
-      <button>X</button>
-    </li>
+      <Button />
+    </Wrapper>
   </>
 );
 

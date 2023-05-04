@@ -1,9 +1,10 @@
 import React from 'react';
-import UsersListItem from 'components/UsersListItem/UsersListItem';
+import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
 import { users } from 'data/users';
+import { Wrapper } from 'components/organisms/UsersList/UsersList.styled';
 
 const UsersList = () => (
-  <div>
+  <Wrapper>
     <ul>
       {/* { name, average, attendance } destrukturyzacja */}
       {users.map((usersData) => (
@@ -11,9 +12,8 @@ const UsersList = () => (
         // <UsersListItem usersData /> tylko gdy propsy sa true lub false
         // np.   isHighlighted
       ))}
-      ;
     </ul>
-  </div>
+  </Wrapper>
 );
 
 export default UsersList;
