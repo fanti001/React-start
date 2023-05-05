@@ -7,4 +7,8 @@ export const Wrapper = styled.div`
   padding: 20px 30px 20px 0px;
   border-radius: 15px;
   box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+
+  h1 {
+    text-align: center;
+  }
 `;
