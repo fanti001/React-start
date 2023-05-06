@@ -1,29 +1,24 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Label } from 'components/atoms/Label/Label';
 import { Input } from 'components/atoms/Input/Input';
-import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
-  label {
-    margin-top: 15px;
-    margin-left: 25px;
-    margin-bottom: 10px;
-  }
-  input {
-    margin-left: 25px;
+  ${Label} {
+    margin: 10px 0;
   }
 `;
 
-const FormField = ({ onChange, values, label, name, id, type = 'text', ...props }) => {
+const FormField = ({ onChange, value, label, name, id, type = 'text' }) => {
   return (
     <Wrapper>
       <Label htmlFor={id}>{label}</Label>
-      <Input name={name} id={id} type={type} values={values} onChange={onChange} />
+      <Input name={name} id={id} type={type} value={value} onChange={onChange} />
     </Wrapper>
   );
 };
